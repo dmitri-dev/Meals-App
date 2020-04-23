@@ -1,10 +1,11 @@
-import 'package:flappy_meals/widgets/dynamic_icon.dart';
-import 'package:flutter/cupertino.dart';
-
+import '../screens/meal_detail_screen.dart';
+import '../widgets/dynamic_icon.dart';
 import '../models/meal.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MealItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
@@ -13,6 +14,7 @@ class MealItem extends StatelessWidget {
 
   MealItem(
       {Key key,
+      @required this.id,
       @required this.title,
       @required this.imageUrl,
       @required this.duration,
@@ -52,12 +54,17 @@ class MealItem extends StatelessWidget {
     }
   }
 
-  void selectMeal() {}
+  void selectMeal(BuildContext context) {
+    Navigator.of(context).pushNamed(
+      MealDetailScreen.routeName,
+      arguments: id,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: selectMeal,
+      onTap: () => selectMeal(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
@@ -84,7 +91,7 @@ class MealItem extends StatelessWidget {
                   bottom: 20,
                   right: 10,
                   child: Container(
-                    width: 220,
+                    width: 180,
                     color: Colors.black54,
                     padding: EdgeInsets.symmetric(
                       vertical: 5,
