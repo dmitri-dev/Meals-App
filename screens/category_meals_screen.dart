@@ -1,5 +1,4 @@
-import 'package:flappy_meals/widgets/meal_item.dart';
-
+import '../widgets/meal_item.dart';
 import '../dummy-data.dart';
 import 'package:flutter/material.dart';
 
