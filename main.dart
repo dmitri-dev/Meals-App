@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Meals',
       theme: ThemeData(
           primarySwatch: Colors.deepOrange,
-          accentColor: Colors.deepOrangeAccent,
+          accentColor: Color.fromRGBO(255, 223, 0, 1),
           canvasColor: Color.fromRGBO(255, 254, 229, 1),
           fontFamily: 'Comic Sans',
           textTheme: ThemeData.light().textTheme.copyWith(
@@ -42,13 +42,13 @@ class MyApp extends StatelessWidget {
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
       },
       onGenerateRoute: (settings) {
-        print(settings.arguments);
-//        if (settings.name == '/meal-detail') {
-//          return ...;
-//        } else if (settings.name == '/something-else'){
-//          return ...;
-//        }
-//        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+        return (settings.arguments);
+        /*if (settings.name == '/meal-detail') {
+          return ...;
+        } else if (settings.name == '/something-else'){
+          return ...;
+        }
+        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());*/
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
