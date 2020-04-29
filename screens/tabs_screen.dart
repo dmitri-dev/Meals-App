@@ -1,3 +1,5 @@
+import 'package:flappy_meals/widgets/main_drawer.dart';
+
 import '../screens/favorites_screen.dart';
 import '../screens/categories_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +18,6 @@ class _TabsScreenState extends State<TabsScreen> {
     {
       'page': FavoritesScreen(),
       'title': 'Favorites',
-      'actions': [FlatButton(),]
     },
   ];
   int _selectedPageIndex = 0;
@@ -34,6 +35,7 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MainDrawer(),
       appBar: AppBar(
         title: Text(
           _pages[_selectedPageIndex]['title'],
