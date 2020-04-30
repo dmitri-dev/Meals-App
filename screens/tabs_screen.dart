@@ -1,5 +1,4 @@
-import 'package:flappy_meals/widgets/main_drawer.dart';
-
+import '../widgets/main_drawer.dart';
 import '../screens/favorites_screen.dart';
 import '../screens/categories_screen.dart';
 import 'package:flutter/material.dart';
