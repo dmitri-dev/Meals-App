@@ -36,7 +36,7 @@ class MainDrawer extends StatelessWidget {
             alignment: Alignment.centerLeft,
             color: Theme.of(context).accentColor,
             child: Text(
-              'Cooking Up!,',
+              'Cooking Up!',
               style: Theme.of(context).textTheme.body2,
             ),
           ),
